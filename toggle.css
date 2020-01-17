@@ -1,0 +1,111 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #F7F9FA;
+    color: #47525D;
+}
+
+h1, p {
+    text-align: center;
+    font-family: "Lato";
+}
+
+h1 {
+    margin: 3.75em 0 0.4375em 0;
+    font-weight: 400;
+    display: inline-block;
+    width: 100%;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+h1, p, .brandingContainer {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.toggleContainer {
+    margin: 0 auto;
+    width: 4em;
+    transition: transform 180ms cubic-bezier(0.18, 0.89, 0.31, 1.23);
+}
+
+.toggleContainer.zoomed {
+    transform: perspective(5em) translate3d(0px, .6em,3em);
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle + label {
+    display: block;
+    position: relative;
+    width: 3.75em;
+    height: 1.875em;
+    border-radius: 0.625em;
+    background-color: white;
+    border: 0.125em solid #9DAAAF;
+    cursor: pointer;
+    -moz-box-shadow: inset 0 0 0 0 #9DAAAF;
+    -webkit-box-shadow: inset 0 0 0 0 #9DAAAF;
+    box-shadow: inset 0 0 0 0 #9DAAAF;
+    -moz-transition: background-color 160ms cubic-bezier(0.4, 0, 0.2, 1) 120ms,
+        border-color 160ms cubic-bezier(0.4, 0, 0.2, 1) 120ms,
+        box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1) 110ms;
+    -o-transition: background-color 160ms cubic-bezier(0.4, 0, 0.2, 1) 120ms,
+        border-color 160ms cubic-bezier(0.4, 0, 0.2, 1) 120ms,
+        box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1) 110ms;
+    -webkit-transition: background-color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-delay: 120ms, 120ms, 110ms;
+    transition: background-color 160ms cubic-bezier(0.4, 0, 0.2, 1) 120ms,
+        border-color 160ms cubic-bezier(0.4, 0, 0.2, 1) 120ms,
+        box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1) 110ms;
+}
+
+#toggle:checked + label {
+    background-color: #00A0BC;
+    border: 0.125em solid #00A0BC;
+    -moz-box-shadow: inset 0 0 0 1.875em #00A0BC;
+    -webkit-box-shadow: inset 0 0 0 1.875em #00A0BC;
+    box-shadow: inset 0 0 0 1.875em #00A0BC;
+}
+
+#toggle + label::after {
+    content: '';
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.25em -0.0625em rgba(16, 32, 55, 0.2),
+        0 0.25em 0.3125em 0 rgba(16, 32, 55, 0.14), 0 0.0625em 0.625em 0 rgba(16, 32, 55, 0.12);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: box-shadow;
+    -moz-transition: all 240ms cubic-bezier(0.18, 0.89, 0.31, 1.23);
+    -o-transition: all 240ms cubic-bezier(0.18, 0.89, 0.31, 1.23);
+    -webkit-transition: all 240ms cubic-bezier(0.18, 0.89, 0.31, 1.23);
+    transition: all 240ms cubic-bezier(0.18, 0.89, 0.31, 1.23);
+}
+
+#toggle:checked + label::after {
+    left:50%;
+}
+
+#toggle + label:hover::after {
+    box-shadow: 0 0.375em 0.375em -0.1875em rgba(16, 32, 55, 0.2),
+    0 0.625em 0.875em 0.0625em rgba(16, 32, 55, 0.14),
+    0 0.25em 1.125em 0.1875em rgba(16, 32, 55, 0.12);
+}
