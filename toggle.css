@@ -35,7 +35,7 @@ h1, p, .brandingContainer {
 
 .toggleContainer {
     margin: 0 auto;
-    width: 4em;
+    width: 5em;
     transition: transform 180ms cubic-bezier(0.18, 0.89, 0.31, 1.23);
 }
 
